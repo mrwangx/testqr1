@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv=content-type>
+    <meta name=author content="Laruence(www.laruence.com)">
+    <title>即时显示上传缩略图</title>
+</head>
+<body style="text-align:center;">
+<div>
+    <div style="width:200px; height:200px; border:1px solid #666;"><img id="img"  style="visibility:hidden;" height="100%" width="100%"></div>
+    <div style="margin-top:8px;"><input id="file" type="file" onChange="preivew(this,'img');"></div>
+</div>
+<script language="javascript" type="text/javascript">
+    var allowExt = ['jpg', 'gif', 'bmp', 'png', 'jpeg'];
+    var preivew = function(file, container){
+        try{
+            var pic =  new Picture(file, document.getElementById(container));
+        }catch(e){
+            alert(e);
+        }
+    }
+    //缩略图类定义
+    var Picture  = function(file, container){
+        var height = 0,
+                widht  = 0,
+                ext    = '',
+                size   = 0,
+                name   = '',
+                path   =  '';
+        var self   = this;
+        if(file){
+            name = file.value;
+            console.log(window.navigator.userAgent);
+            if(window.navigator.userAgent.indexOf("MSIE")>=1){
+                file.select();
+                path = document.selection.createRange().text;
+            }else if(window.navigator.userAgent.indexOf("Firefox")>=1){
+                console.log(file.files);
+                if(file.files){
+                    path = window.URL.createObjectURL(file.files[0]); //file.files.item(0).getAsDataURL();
+                }else{
+                    path = file.value;
+                }
+            }
+            else
+            {
+                //console.log(document.selection.createRange().text);
+                console.log(window.URL.createObjectURL(file.files[0]));
+                console.log(file.value);
+            }
+
+        }else{
+            console.log(1111);
+            throw '无效的文件';
+        }
+        ext = name.substr(name.lastIndexOf("."), name.length);
+        if(container.tagName.toLowerCase() != 'img'){
+            throw '不是一个有效的图片容器';
+            container.visibility = 'hidden';
+        }
+        container.src = path;
+        container.alt = name;
+        container.style.visibility = 'visible';
+        height = container.height;
+        widht  = container.widht;
+        size   = container.fileSize;
+        this.get = function(name){
+            return self[name];
+        }
+        this.isValid = function(){
+            if(allowExt.indexOf(self.ext) !== -1){
+                throw '不允许上传该文件类型';
+                return false;
+            }
+        }
+    }
+</script>
+</body>
+</html>

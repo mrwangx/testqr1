@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="js/jquery-1.11.1.min.js" ></script>
+    <script src="js/html5-qrcode.min.js" ></script>
+    <script src="js\jsqrcode-combined.min.js" ></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <div id="reader" style="width:300px;height:250px">
+
+    </div>
+    <input type="file" onchange="handleFiles(this)"/>
+    <div id="preview1" style="border:1px solid #FFCC00; width:108px; height:130px;display:block" >
+
+    </div>
+  </body>
+
+  <script>
+      function handleFiles(imgFile)
+      {
+//预览代码，支持 IE6、IE7。
+          var newPreview = document.getElementById("preview1");
+
+          var t ;
+          if(document.all) //IE
+              t = imgFile.value;
+          else
+              t = imgFile.files[0].getAsDataURL(); //FF
+          newPreview.style.backgroundImage = "url(" + t + ")";//imgFile.value;
+          newPreview.style.width = "108px";
+          newPreview.style.height = "130px";
+          newPreview.style.display = "block";
+      }
+
+
+      $('#reader').html5_qrcode(function(data){
+                // do something when code is read
+                console.log(data);
+              },
+              function(error){
+                //show read errors
+              }, function(videoError){
+                //the video stream could be opened
+              }
+      );
+
+
+  </script>
+</html>

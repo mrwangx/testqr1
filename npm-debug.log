@@ -1,0 +1,77 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'E:\\nodejs\\\\node.exe',
+1 verbose cli   'E:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'html5-qrcode' ]
+2 info using npm@2.11.2
+3 info using node@v0.12.5
+4 verbose install initial load of E:\nodejsProject\testqr1\package.json
+5 verbose installManyTop reading scoped package data from E:\nodejsProject\testqr1\node_modules\body-parser\package.json
+6 verbose installManyTop reading scoped package data from E:\nodejsProject\testqr1\node_modules\cookie-parser\package.json
+7 verbose installManyTop reading scoped package data from E:\nodejsProject\testqr1\node_modules\debug\package.json
+8 verbose installManyTop reading scoped package data from E:\nodejsProject\testqr1\node_modules\ejs\package.json
+9 verbose installManyTop reading scoped package data from E:\nodejsProject\testqr1\node_modules\express\package.json
+10 verbose installManyTop reading scoped package data from E:\nodejsProject\testqr1\node_modules\morgan\package.json
+11 verbose installManyTop reading scoped package data from E:\nodejsProject\testqr1\node_modules\serve-favicon\package.json
+12 verbose readDependencies loading dependencies from E:\nodejsProject\testqr1\package.json
+13 silly cache add args [ 'html5-qrcode', null ]
+14 verbose cache add spec html5-qrcode
+15 silly cache add parsed spec { raw: 'html5-qrcode',
+15 silly cache add   scope: null,
+15 silly cache add   name: 'html5-qrcode',
+15 silly cache add   rawSpec: '',
+15 silly cache add   spec: '*',
+15 silly cache add   type: 'range' }
+16 silly addNamed html5-qrcode@*
+17 verbose addNamed "*" is a valid semver range for html5-qrcode
+18 silly addNameRange { name: 'html5-qrcode', range: '*', hasData: false }
+19 silly mapToRegistry name html5-qrcode
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry http://registry.cnpmjs.org/
+22 silly mapToRegistry uri http://registry.cnpmjs.org/html5-qrcode
+23 verbose addNameRange registry:http://registry.cnpmjs.org/html5-qrcode not in flight; fetching
+24 verbose request uri http://registry.cnpmjs.org/html5-qrcode
+25 verbose request no auth needed
+26 info attempt registry request try #1 at 00:36:34
+27 verbose request id 6ff544b211285620
+28 http request GET http://registry.cnpmjs.org/html5-qrcode
+29 http 404 http://registry.cnpmjs.org/html5-qrcode
+30 verbose headers { server: 'nginx/1.4.6 (Ubuntu)',
+30 verbose headers   date: 'Tue, 06 Oct 2015 16:36:41 GMT',
+30 verbose headers   'content-type': 'application/json; charset=utf-8',
+30 verbose headers   'transfer-encoding': 'chunked',
+30 verbose headers   connection: 'keep-alive',
+30 verbose headers   'x-readtime': '10',
+30 verbose headers   'content-encoding': 'gzip' }
+31 silly get cb [ 404,
+31 silly get   { server: 'nginx/1.4.6 (Ubuntu)',
+31 silly get     date: 'Tue, 06 Oct 2015 16:36:41 GMT',
+31 silly get     'content-type': 'application/json; charset=utf-8',
+31 silly get     'transfer-encoding': 'chunked',
+31 silly get     connection: 'keep-alive',
+31 silly get     'x-readtime': '10',
+31 silly get     'content-encoding': 'gzip' } ]
+32 verbose stack Error: 404 Not Found: html5-qrcode
+32 verbose stack     at CachingRegistryClient.<anonymous> (E:\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:245:14)
+32 verbose stack     at E:\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:176:7
+32 verbose stack     at Gunzip.onEnd (zlib.js:227:5)
+32 verbose stack     at Gunzip.emit (events.js:129:20)
+32 verbose stack     at _stream_readable.js:908:16
+32 verbose stack     at process._tickCallback (node.js:355:11)
+33 verbose statusCode 404
+34 verbose pkgid html5-qrcode
+35 verbose cwd E:\nodejsProject\testqr1
+36 error Windows_NT 6.1.7601
+37 error argv "E:\\nodejs\\\\node.exe" "E:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "html5-qrcode"
+38 error node v0.12.5
+39 error npm  v2.11.2
+40 error code E404
+41 error 404 Not Found: html5-qrcode
+41 error 404
+41 error 404 'html5-qrcode' is not in the npm registry.
+41 error 404 You should bug the author to publish it (or use the name yourself!)
+41 error 404 It was specified as a dependency of 'testqr1'
+41 error 404
+41 error 404 Note that you can also install from a
+41 error 404 tarball, folder, http url, or git url.
+42 verbose exit [ 1, true ]
